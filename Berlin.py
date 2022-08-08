@@ -8,8 +8,7 @@ class Berlin(rumps.App):
 
     @rumps.timer(1)
     def update_title(self, _):
-        # TODO: learn how to use subprocess lol 🙃
-        # this was the only i could make it work
+        # i only could make subprocess work in this way
         title = subprocess.run(
             ["osascript", "-e",
                 "tell application \"Spotify\" to name of current track as string"],
@@ -19,11 +18,7 @@ class Berlin(rumps.App):
                 "tell application \"Spotify\" to artist of current track as string"],
             stdout=subprocess.PIPE).stdout.decode("utf-8")
 
-        # cutting off title after the first - (dash)
-        # usually this slice is worthless
-        # the two - (dash) can make people confused
-        title = title.split(" - ")[0]
-        self.title = "🎵 " + \
+        self.title = "▶︎  " + \
             title.join(title.splitlines()) + " - " + \
             artist.join(artist.splitlines())
 
