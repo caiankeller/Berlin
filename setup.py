@@ -8,7 +8,7 @@ OPTIONS = {
     'plist': {
         'LSUIElement': True,
     },
-    'packages': ['rumps'],
+    'packages': ['rumps', "pyperclip"],
 }
 
 setup(
